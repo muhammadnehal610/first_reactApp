@@ -11,7 +11,7 @@ function App() {
     <>
       <Nav />
       <Hero />
-      <Product className="flex flex-wraps" />
+      <Product />
       <Testimoial />
       <Footer />
     </>
