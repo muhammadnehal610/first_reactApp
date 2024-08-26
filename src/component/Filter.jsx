@@ -60,10 +60,10 @@ function Filter({ onChange }) {
         {/* Document Type Radio Buttons */}
         <ul className="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg sm:flex">
           {[
-            { id: "horizontal-list-radio-license", label: "Driver License" },
-            { id: "horizontal-list-radio-id", label: "State ID" },
-            { id: "horizontal-list-radio-military", label: "US Military" },
-            { id: "horizontal-list-radio-passport", label: "US Passport" },
+            { id: "horizontal-list-radio-license", label: "100>" },
+            { id: "horizontal-list-radio-id", label: "29>" },
+            { id: "horizontal-list-radio-military", label: "46>" },
+            { id: "horizontal-list-radio-passport", label: "30>" },
           ].map((option) => (
             <li
               key={option.id}
