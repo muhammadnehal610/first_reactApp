@@ -13,7 +13,7 @@ function App() {
   const [product, setProduct] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://api.escuelajs.co/api/v1/products")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -28,17 +28,20 @@ function App() {
       <Filter
         onChange={(e) => {
           setSearch(e.target.value);
+
         }}
       />
-      <Hero />
+      {
+        search ? false : <Hero />
+      }
       <div className="container mx-auto py-24 px-5">
         <div className="flex flex-wrap -m-4">
           {filteredArr.map((data) => (
             <Product
               key={data.id}
               title={data.title}
-              image={data.image}
-              category={data.category}
+              image={data.images[1]}
+              category={data.category.name}
               price={data.price}
             />
           ))}
