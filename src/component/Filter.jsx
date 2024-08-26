@@ -52,13 +52,7 @@ function Filter({ onChange }) {
               <option value="" disabled selected>
                 Choose a state
               </option>
-              <option value="CA">California</option>
-              <option value="TX">Texas</option>
-              <option value="WH">Washington</option>
-              <option value="FL">Florida</option>
-              <option value="VG">Virginia</option>
-              <option value="GE">Georgia</option>
-              <option value="MI">Michigan</option>
+
             </select>
           </div>
         </form>
