@@ -6,26 +6,46 @@ import Hero from "./component/Hero";
 
 import Nav from "./component/Nav";
 import Product from "./component/Product";
-import Testimoial from "./component/Testimoials";
+// import Testimoial from "./component/Testimoials";
 import { useEffect } from "react";
 
 function App() {
-  const [product, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((res) => res.json())
-      .then((data) => setProduct(data));
+      .then((data) => setProducts(data));
   }, []);
 
-  const filteredArr = product.filter(
-    (data) => data.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
-  );
-  console.log(product);
+  const filteredArr = products.filter((data) => {
+    const matchesSearch = search
+      ? data.title.toLowerCase().includes(search.toLowerCase())
+      : true;
+
+    const matchesCategory = category
+      ? data.category.name.includes(category)
+      : true;
+
+    return matchesSearch && matchesCategory;
+  });
+
+  function handleSearchInput(e) {
+    setSearch(e.target.value);
+  }
+
+  function handleCategoryChange(e) {
+    setCategory(e.target.value);
+  }
+
   return (
     <>
       <Nav />
+
       <Filter
+<<<<<<< Updated upstream
         onChange={(e) => {
           setSearch(e.target.value);
 
@@ -34,6 +54,13 @@ function App() {
       {
         search ? false : <Hero />
       }
+=======
+        onSearchChange={handleSearchInput}
+        onCategoryChange={handleCategoryChange}
+      />
+
+      <Hero />
+>>>>>>> Stashed changes
       <div className="container mx-auto py-24 px-5">
         <div className="flex flex-wrap -m-4">
           {filteredArr.map((data) => (
@@ -47,7 +74,7 @@ function App() {
           ))}
         </div>
       </div>
-      <Testimoial />
+      {/* <Testimonial /> */}
       <Footer />
     </>
   );

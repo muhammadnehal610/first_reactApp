@@ -1,4 +1,4 @@
-function Filter({ onChange }) {
+function Filter({ onSearchChange, onCategoryChange }) {
   return (
     <div className="p-4 bg-white rounded-lg shadow-lg">
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full mx-auto">
@@ -34,7 +34,7 @@ function Filter({ onChange }) {
               className="block w-full pl-10 p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500"
               placeholder="Search Mockups, Logos..."
               required=""
-              onChange={onChange}
+              onChange={onSearchChange}
             />
           </div>
         </form>
@@ -49,10 +49,21 @@ function Filter({ onChange }) {
               id="states"
               className="w-full p-2.5 text-sm bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             >
+<<<<<<< Updated upstream
               <option value="" disabled selected>
                 Choose a state
               </option>
 
+=======
+              <option onChange={onCategoryChange} selected="">
+                Choose a state
+              </option>
+              <option value={"Clothes"}>Clothes</option>
+              <option value={"Electronics"}>Electronics</option>
+              <option value={"Furniture"}>Furniture</option>
+              <option value={"Shoes"}>Shoes</option>
+              <option value={"Miscellaneous"}>Miscellaneous</option>
+>>>>>>> Stashed changes
             </select>
           </div>
         </form>
