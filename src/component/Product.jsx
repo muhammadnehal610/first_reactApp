@@ -1,6 +1,6 @@
 function Product({ image, category, title, price }) {
   return (
-    <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+    <div>
       <a className="block relative h-48 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
         <img
           alt="ecommerce"

@@ -39,31 +39,25 @@ function Filter({ onSearchChange, onCategoryChange }) {
           </div>
         </form>
 
-        {/* State Selector */}
+        {/* Category Selector */}
         <form className="max-w-sm w-full">
           <div className="flex items-center">
-            <label htmlFor="states" className="sr-only">
-              Choose a state
+            <label htmlFor="categories" className="sr-only">
+              Choose a category
             </label>
             <select
-              id="states"
+              onChange={onCategoryChange}
+              name="categories"
+              id="categories"
               className="w-full p-2.5 text-sm bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             >
-<<<<<<< Updated upstream
-              <option value="" disabled selected>
-                Choose a state
+              <option value="" selected>
+                Choose a category{" "}
               </option>
-
-=======
-              <option onChange={onCategoryChange} selected="">
-                Choose a state
-              </option>
-              <option value={"Clothes"}>Clothes</option>
-              <option value={"Electronics"}>Electronics</option>
-              <option value={"Furniture"}>Furniture</option>
-              <option value={"Shoes"}>Shoes</option>
-              <option value={"Miscellaneous"}>Miscellaneous</option>
->>>>>>> Stashed changes
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
             </select>
           </div>
         </form>
